@@ -1,1 +1,3 @@
-#
+N puzzle Problem use a sliding puzzle that consists of numbered square tiles in random order with one tile missing. The object of the puzzle is to place the tiles in order by making sliding moves that use the empty space.
+
+This program is  for modeling algorithms involving heuristics. For this program I implemented A* search algorithm, and the heuristics for this problem is to count the number of misplaced tiles . 
