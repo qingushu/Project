@@ -1,0 +1,3 @@
+Minimax TicTacToe is a adversarial search game.
+
+It applied the Minimax Algorithm. The Minimax Algorithm generates every possible move by means of recursion and assigns a score to each move. The move with the highest score is then selected and returned. The score for a move is calculated by a function that evaluates the current state of the game and determines how good that move is for the current player. The higher the score, the better.

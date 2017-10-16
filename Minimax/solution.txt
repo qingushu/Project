@@ -1,0 +1,55 @@
+x moves to 8
+o's turn
+_ _ _ 
+_ _ _ 
+_ _ x 
+
+o moves to 6
+x's turn
+_ _ _ 
+_ _ _ 
+o _ x 
+
+x moves to 7
+o's turn
+_ _ _ 
+_ _ _ 
+o x x 
+
+o moves to 1
+x's turn
+_ o _ 
+_ _ _ 
+o x x 
+
+x moves to 2
+o's turn
+_ o x 
+_ _ _ 
+o x x 
+
+o moves to 4
+x's turn
+_ o x 
+_ o _ 
+o x x 
+
+x moves to 0
+o's turn
+x o x 
+_ o _ 
+o x x 
+
+o moves to 5
+x's turn
+x o x 
+_ o o 
+o x x 
+
+x moves to 3
+o's turn
+x o x 
+x o o 
+o x x 
+
+Draw
