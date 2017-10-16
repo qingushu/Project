@@ -1,3 +1,3 @@
 # Project
 
-This is my personal project web page, it contains all the important project I've done
+There are some of my projects, I selected them from all of my past projects.
