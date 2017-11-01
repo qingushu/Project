@@ -81,7 +81,7 @@ class TicTacToeBoard {
 	}
 	const std::vector<int> getEmptyvec() const {
 		std::vector<int> vec(emptyset.begin(), emptyset.end());
-		std::shuffle(vec.begin(), vec.end(), std::default_random_engine(time(NULL)));
+		shuffle(vec.begin(), vec.end(), std::default_random_engine(time(NULL)));
 		return vec;
 	}
 
@@ -116,61 +116,28 @@ class TicTacToeAgent {
 	// evaluates current state of board, returns position of best move
 	int MinimaxDecision(const TicTacToeBoard& b) {
 
-
-std::vector<int> vec = b.getEmptyvec();
-std::vector<int> a(vec.size());
-std::vector<TicTacToeBoard> c(vec.size());
-
-
- if(chr == 'x'){
+		std::vector<int> vec = b.getEmptyvec();
+		std::vector<int> a(vec.size());
+		std::vector<TicTacToeBoard> c(vec.size());
 
 
-	for(int i = 0; i < vec.size(); i++){
+		for(int i = 0; i < vec.size(); i++){
 				c[i] = b;
-				c[i].move('x', vec[i]);
+				c[i].move(chr, vec[i]);
 				a[i]= MinValue(c[i]);
-			}
+		}
 
 			int index = 0;
 
-	for(int i = 0; i < vec.size(); i++)
-	{
+		for(int i = 0; i < vec.size(); i++)
+	  {
 			if(a[i] > a[index])
 					index = i;
-	}
+	   }
 
-	return vec[index];
-}
-else {
-
-	for(int i = 0; i < vec.size(); i++){
-				c[i] = b;
-				c[i].move('o', vec[i]);
-				a[i] = MinValue(c[i]);
-			}
-
-			int index = 0;
-
-	for(int i = 0; i < vec.size(); i++)
-	{
-			if(a[i] < a[index])
-					index = i;
-	}
-	return vec[index];
+	  return vec[index];
 
 }
-
-
-
-
-	 }
-
-
-
-//}
-
-
-
 
 
 	// evaluates maximum utility of a state
@@ -186,12 +153,12 @@ else {
 		for(int i = 0; i < vec.size(); i++){
 					c = b;
 						c.move(vec[i]);
-						v = fmax(v, MinValue(c));
+						v = std::max(v, MinValue(c));
 
-					}
+		}
 					return v;
 
-			}
+ }
 
 
 
@@ -210,15 +177,14 @@ else {
 		vec = b.getEmptyvec();
 		for(int i = 0; i < vec.size(); i++){
 					c = b;
-					//c.move(otherchr(chr),vec[i]);
 					c.move(vec[i]);
-					v = fmin(v, MaxValue(c));
+					v = std::min(v, MaxValue(c));
 
-				}
+		}
 
 				return v;
 
-			}
+	}
 
 	// returns true if board is full or has three in a row
 	bool TerminalTest(const TicTacToeBoard& b) {
@@ -231,9 +197,9 @@ else {
 	// of this board to this agent (winutil, loseutil, or drawutil)
 	int Utility(const TicTacToeBoard& b) {
 
-		if(b.won()&& b.latestMove == 'x')
+		if(b.won()&& b.latestMove == chr)
 			return winutil;
-		else if(b.won() && b.latestMove == 'o')
+		else if(b.won() && b.latestMove == otherchr(chr))
 			return loseutil;
 		else
 			return drawutil;
@@ -243,3 +209,4 @@ else {
 };
 
 #endif
+
